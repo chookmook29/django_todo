@@ -4,11 +4,19 @@
 	<table class="table table-striped">
 	  <tbody>
 	  	{% for things in all_items %}
-	    <tr>
-	      <td>{{ things.item }}</td>
-	      <td>{{ things.completed }}</td>
-	      <td>Usuń</td>
-	    </tr>
+	  		{% if things.completed %}
+			    <tr>
+			      <td class="striker">{{ things.item }}</td>
+			      <td>{{ things.completed }}</td>
+			      <td>Usuń</td>
+			    </tr>
+	    	{% else %}
+	    		<tr>
+			      <td>{{ things.item }}</td>
+			      <td>{{ things.completed }}</td>
+			      <td>Usuń</td>
+			    </tr>
+			{% endif %}
 	    {% endfor %}
 	  </tbody>
 	</table>
