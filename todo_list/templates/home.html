@@ -7,13 +7,13 @@
 	  		{% if things.completed %}
 			    <tr>
 			      <td class="striker">{{ things.item }}</td>
-			      <td>{{ things.completed }}</td>
+			      <td><a href="{% url 'uncross' things.id %}">Cofnij</a></td>
 			      <td><a href="{% url 'delete' things.id %}">Usuń</a></td>
 			    </tr>
 	    	{% else %}
 	    		<tr>
 			      <td>{{ things.item }}</td>
-			      <td>{{ things.completed }}</td>
+			      <td><a href="{% url 'cross_off' things.id %}">Przekreśl</a></td>
 			      <td><a href="{% url 'delete' things.id %}">Usuń</a></td>
 			    </tr>
 			{% endif %}

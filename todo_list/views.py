@@ -27,3 +27,16 @@ def delete(request, list_id):
     item.delete()
     return redirect('home')
 
+
+def cross_off(request, list_id):
+    item = List.objects.get(pk=list_id)
+    item.completed = True
+    item.save()
+    return redirect('home')
+
+
+def uncross(request, list_id):
+    item = List.objects.get(pk=list_id)
+    item.completed = False
+    item.save()
+    return redirect('home')
