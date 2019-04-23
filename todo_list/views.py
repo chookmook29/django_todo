@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import List
+from todo_list.models import List
 from .forms import ListForm
 from django.http import HttpResponseRedirect
 
