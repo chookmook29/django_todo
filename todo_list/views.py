@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import List
 from .forms import ListForm
+from django.http import HttpResponseRedirect
 
 
 def home(request):
@@ -19,3 +20,10 @@ def home(request):
 
 def about(request):
     return render(request, 'about.html', {})
+
+
+def delete(request, list_id):
+    item = List.objects.get(pk=list_id)
+    item.delete()
+    return redirect('home')
+

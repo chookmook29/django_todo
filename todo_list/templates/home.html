@@ -8,13 +8,13 @@
 			    <tr>
 			      <td class="striker">{{ things.item }}</td>
 			      <td>{{ things.completed }}</td>
-			      <td>Usuń</td>
+			      <td><a href="{% url 'delete' things.id %}">Usuń</a></td>
 			    </tr>
 	    	{% else %}
 	    		<tr>
 			      <td>{{ things.item }}</td>
 			      <td>{{ things.completed }}</td>
-			      <td>Usuń</td>
+			      <td><a href="{% url 'delete' things.id %}">Usuń</a></td>
 			    </tr>
 			{% endif %}
 	    {% endfor %}
